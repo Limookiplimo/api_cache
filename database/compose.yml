@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: standby_db
+    restart: always
+    environment:
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: user_password
+      POSTGRES_DB: cache_db
+    ports:
+      - "5432:5432"
+    volumes:
+          - postgres-db-volume:/var/lib/postgresql/data
+volumes:
+  postgres-db-volume:
