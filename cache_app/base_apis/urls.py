@@ -7,6 +7,7 @@ urlpatterns = [
     path("api/inventory/<int:pk>/",views.InventoryDetail.as_view()),
     path("api/inventory/category/<str:category>/",views.ProductsByCategory.as_view()),
     path("api/inventory/subcategory/<str:subcategory>/",views.ProductsBySubcategory.as_view()),
+    path("api/inventory/product/<str:product>/",views.ProductByName.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

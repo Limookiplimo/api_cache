@@ -25,3 +25,9 @@ class ProductsBySubcategory(generics.ListAPIView):
         subcategory = self.kwargs["subcategory"]
         return Inventory.objects.filter(subcategory=subcategory)
 
+class ProductByName(generics.ListAPIView):
+    serializer_class = InventorySerializer
+    
+    def get_queryset(self):
+        product = self.kwargs["product"]
+        return Inventory.objects.filter(product=product)
