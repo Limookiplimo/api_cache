@@ -15,9 +15,9 @@
 
     <div class="container">
 
-        <form method="GET" action="{% url 'product-list' %}">
+        <form method="GET" action="{% url 'search-products' %}">
             <div class="form-group">
-                <label for="search">Search by Category or Subcategory</label>
+                <label for="search">Search by Product or Category or Subcategory</label>
                 <input type="text" class="form-control" id="search" name="search" placeholder="Enter category or subcategory">
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
@@ -40,9 +40,14 @@
                     <td>{{ product.category }}</td>
                     <td>{{ product.subcategory }}</td>
                 </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No products found</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
+
     </div>
     {% endblock %}
 
