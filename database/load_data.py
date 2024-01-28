@@ -24,7 +24,7 @@ def insert_data(conn, name, data):
     conn.commit()
 
 def populate_database_table():
-    table_name = "inventory"
+    table_name = "base_apis_inventory"
     columns = ["product varchar(255)","price float","category varchar(255)","subcategory varchar(255)"]
     excel_file = "./database/Products.xlsx"
     df = pd.read_excel(excel_file)
